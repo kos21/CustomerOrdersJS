@@ -4,10 +4,9 @@
 define([
     "require",
     "angular",
-    "configApp",
     "testProvider",
     "app"
-], function(require, ng, configApp, testProvider){
+], function(require, ng,  testProvider){
     'use strict';
 
     require(["domReady!"], function(document){

@@ -4,7 +4,9 @@
   "description": "Test task for get job",
   "main": "index.js",
   "dependencies": {
-    "bower": "^1.5.2"
+    "bower": "^1.5.2",
+    "gulp": "^3.9.0",
+    "yargs": "^3.25.0"
   },
   "devDependencies": {},
   "scripts": {

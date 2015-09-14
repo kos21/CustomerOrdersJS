@@ -5,7 +5,6 @@ require.config({
    paths: {
        "domReady": "./bower_components/domReady/domReady",
        "angular": "./bower_components/angular/angular",
-        "configApp": "./config",
         "testProvider": "./testProvider"
    },
     shim: {
