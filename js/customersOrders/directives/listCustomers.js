@@ -14,7 +14,7 @@ define(["../module"], function(customersOrders){
                       });
               }
             },
-            templateUrl: "./customersOrders/views/listCustomers.html"
+            templateUrl: configApp.templates.list_customers
         };
     }]);
 });

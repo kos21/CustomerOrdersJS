@@ -7,7 +7,7 @@ define(["../module"], function(customersOrders){
 
         return {
             "restrict": "E",
-            templateUrl: "./customersOrders/views/formEditCustomer.html"
+            templateUrl: configApp.templates.edit_customer
         }
     }]);
 });

@@ -15,9 +15,13 @@ gulp.task("copy", function(){
         .pipe(gulp.dest(config.pathData.root_dest + "web/customerOrder"));
     gulp.src(config.pathData.root_source + "bootstrap.js")
         .pipe(gulp.dest(config.pathData.root_dest + "web/customerOrder"));
+    gulp.src(config.pathData.root_source + "configApp.js")
+        .pipe(gulp.dest(config.pathData.root_dest + "web/customerOrder"));
 
     gulp.src(config.pathData.root_source + "css/**")
         .pipe(gulp.dest(config.pathData.root_dest + "web/customerOrder/css"));
+
+
 
     gulp.src(config.pathData.root_source + "customersOrders/**")
         .pipe(gulp.dest(config.pathData.root_dest + "web/customerOrder/customersOrders"));

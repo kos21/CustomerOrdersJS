@@ -17,7 +17,7 @@ define(["../module"], function(customersOrders){
 
                 $http({
                     method: "GET",
-                    "url": config.urlListCustomers,
+                    "url": configApp.urls.list_customers,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
                 }).success(function(dataResult, status, headers, config){
@@ -40,7 +40,7 @@ define(["../module"], function(customersOrders){
 
                 $http({
                     method: "GET",
-                    "url": config.urlListOrders,
+                    "url": configApp.urls.list_orders,
                     data: "customerID=" + customerID,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
@@ -62,7 +62,7 @@ define(["../module"], function(customersOrders){
 
                 $http({
                     method: "POST",
-                    "url": config.urlCustomerAdd,
+                    "url": configApp.urls.add_customer,
                     data: "customerData = " + JSON.stringify(customerData),
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
@@ -87,7 +87,7 @@ define(["../module"], function(customersOrders){
 
                 $http({
                     method: "POST",
-                    "url": config.urlGetCustomerData,
+                    "url": configApp.urls.get_customer_data,
                     data: "customerID = " + customerID,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
@@ -108,7 +108,7 @@ define(["../module"], function(customersOrders){
 
               $http({
                   method: "POST",
-                  "url": config.urlOrderAdd,
+                  "url": configApp.urls.add_order,
                   data: "customerID = " + customerID,
                   headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 

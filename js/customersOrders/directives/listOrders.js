@@ -7,7 +7,7 @@ define(["../module"], function(customersOrders){
 
         return{
             "restrict": "E",
-            "templateUrl": "./customersOrders/views/listOrders.html"
+            "templateUrl": configApp.templates.list_orders
         }
     }]);
 });
