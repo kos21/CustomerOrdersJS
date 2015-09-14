@@ -1,0 +1,35 @@
+<div class="editForm" ng-hide="showForm" ng-show="!showForm">
+    <h2>Customers</h2>
+    <form enctype="multipart/form-data" class="form_edit_customer" method="post">
+        <div class="form_customer_edit">
+            <input type="text" name="id_customer" value="{{customerData.id}}"/><label>ID</label>
+            </br></br>
+            <input type="text" name="name_customer" value="{{customerData.name}}"/><label>Name</label>
+            </br></br>
+            <input type="text" name="phone" value="{{customerData.phone}}"/><label>Phone</label>
+            </br></br>
+            <input type="text" name="address" value="{{customerData.address}}"/><label>Address</label>
+            </br></br>
+            <input type="submit" value="Edit" value=""/>
+        </div>
+        <h2>Orders</h2>
+        <div class="list_orders">
+            <list-orders></list-orders>
+        </div>
+        <div class="add_order">
+            <form enctype="multipart/form-data" class="form_edit_customer" method="post">
+                <input type="text" name="id_customer" value="" ng-model="order.id"/><label>ID</label>
+                </br></br>
+                <input type="text" name="phone" value="" ng-model="order.posted_at"/><label>Posted at</label>
+                </br></br>
+                <input type="text" name="address" value="" ng-model="order.amount"/><label>Amout</label>
+                </br></br>
+                <input type="text" name="address" value="" ng-model="order.paid_at"/><label>paid_at</label>
+                </br></br>
+                <input type="submit" value="addOrder" ng-click="addOrder(customerData.id)"/>
+                </br></br>
+            </form>
+        </div>
+        <div class="test"></div>
+    </form>
+</div>

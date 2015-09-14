@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="css/customer.css"/>
+
+    <title>Customers</title>
+</head>
+<body>
+<div class="standart" ng-app="app.customersOrders" ng-controller="customerController">
+    <h1>Customers and Orders</h1>
+    <div class="main_table">
+        <div class="add_customer"><button ng-click="showCreateCustomer()">Add customer</button></div>
+        <div class="list_customers">
+            <list-customers></list-customers>
+        </div>
+    </div>
+    <div class="form_edit">
+        <add-customer></add-customer>
+        <edit-customer></edit-customer>
+    </div>
+
+<div class="test">
+    </div>
+</div>
+
+<script type="text/javascript" data-main="main" src="./bower_components/requirejs/require.js"></script>
+</body>
+</html>
+

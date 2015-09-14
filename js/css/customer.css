@@ -1,0 +1,25 @@
+h1{
+    font-size: 24px;
+    color: #006600;
+}
+.standart{
+    width: 1800px;
+}
+.main_table{
+    width: 25%;
+    float: left;
+}
+.form_edit{
+    width: 50%;
+    float: left;
+}
+.test{
+    clear: left;
+}
+.list_orders{
+    float: left;
+    margin-right: 56px;
+}
+.add_order{
+    float: left;
+}
