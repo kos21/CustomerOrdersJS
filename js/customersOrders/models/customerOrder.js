@@ -41,7 +41,7 @@ define(["../module"], function(customersOrders){
                 $http({
                     method: "GET",
                     "url": configApp.urls.list_orders,
-                    data: "customerID=" + customerID,
+                    data: "customer_id=" + customerID,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
                 }).success(function(dataResult, status, headers, config){
@@ -63,7 +63,7 @@ define(["../module"], function(customersOrders){
                 $http({
                     method: "POST",
                     "url": configApp.urls.add_customer,
-                    data: "customerData = " + JSON.stringify(customerData),
+                    data: "name=" + customerData.name_customer + "&phone=" + customerData.phone + "&address=" + customerData.address,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
                 }).success(function(dataResult, status, headers, config){
@@ -88,7 +88,23 @@ define(["../module"], function(customersOrders){
                 $http({
                     method: "POST",
                     "url": configApp.urls.get_customer_data,
-                    data: "customerID = " + customerID,
+                    data: "customer_id=" + customerID,
+                    headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+
+                }).success(function(dataResult, status, headers, config){
+
+                    callback(dataResult);
+
+                }).error(function(data, status, headers, config){
+
+                    console.log(status + " error message  -" + data.toString());
+                });
+            },
+            editCustomer: function(customerObject){
+                $http({
+                    method: "POST",
+                    "url": configApp.urls.edit_customer,
+                    data: "customer_id=" + customerObject.customerId + "&name=" + customerObject.name + "&phone" + customerObject.phone + "&address=" + customerObject.address,
                     headers : {'Content-Type': 'application/x-www-form-urlencoded'}
 
                 }).success(function(dataResult, status, headers, config){

@@ -2,15 +2,15 @@
     <h2>Customers</h2>
     <form enctype="multipart/form-data" class="form_edit_customer" method="post">
         <div class="form_customer_edit">
-            <input type="text" name="id_customer" value="{{customerData.id}}"/><label>ID</label>
+            <input type="text" name="customerId" value="" ng-model="customerData.customerId"/><label>ID</label>
             </br></br>
-            <input type="text" name="name_customer" value="{{customerData.name}}"/><label>Name</label>
+            <input type="text" name="name" value="" ng-model="customerData.name"/><label>Name</label>
             </br></br>
-            <input type="text" name="phone" value="{{customerData.phone}}"/><label>Phone</label>
+            <input type="text" name="phone" value="" ng-model="customerData.phone"/><label>Phone</label>
             </br></br>
-            <input type="text" name="address" value="{{customerData.address}}"/><label>Address</label>
+            <input type="text" name="address" value="" ng-model="customerData.address"/><label>Address</label>
             </br></br>
-            <input type="submit" value="Edit" value=""/>
+            <input type="submit" value="Edit" ng-click="editCustomerAction()"/>
         </div>
         <h2>Orders</h2>
         <div class="list_orders">
@@ -18,15 +18,13 @@
         </div>
         <div class="add_order">
             <form enctype="multipart/form-data" class="form_edit_customer" method="post">
-                <input type="text" name="id_customer" value="" ng-model="order.id"/><label>ID</label>
-                </br></br>
                 <input type="text" name="phone" value="" ng-model="order.posted_at"/><label>Posted at</label>
                 </br></br>
                 <input type="text" name="address" value="" ng-model="order.amount"/><label>Amout</label>
                 </br></br>
                 <input type="text" name="address" value="" ng-model="order.paid_at"/><label>paid_at</label>
                 </br></br>
-                <input type="submit" value="addOrder" ng-click="addOrder(customerData.id)"/>
+                <input type="submit" value="addOrder" ng-click="addOrder()"/>
                 </br></br>
             </form>
         </div>

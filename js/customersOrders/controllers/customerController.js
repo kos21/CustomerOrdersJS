@@ -24,13 +24,28 @@ define(["../module"], function(customersOrders){
         $scope.showEditCustomer = function(customerId){
             customerOrder.getlistOrders(customerId, function(resultData){
                 $scope.list_orders = resultData;
-            });
 
-            customerOrder.getCustomerData(customerId, function(customerData){
-                $scope.customerData = customerData;
-            });
+                customerOrder.getCustomerData(customerId, function(customerData){
 
-            $scope.showForm = false;
+                    angular.forEach(customerData[0], function(value, key){
+
+                        document.querySelector("div.form_customer_edit input[name=" + key + "]").value = value;
+                    });
+
+                    $scope.showForm = false;
+                });
+            });
+        };
+
+        $scope.editCustomerAction = function(){
+            var customerinfo  = {};
+
+            customerinfo.name= document.querySelector("div.form_customer_edit input[name=name").value;
+            customerinfo.phone= document.querySelector("div.form_customer_edit input[name=phone").value;
+            customerinfo.address= document.querySelector("div.form_customer_edit input[name=address").value;
+            customerinfo.customerId= document.querySelector("div.form_customer_edit input[name=customerId").value;
+
+            customerOrder.editCustomer(customerinfo);
         };
 
         /**
@@ -42,9 +57,9 @@ define(["../module"], function(customersOrders){
             $scope.customer = {};
         };
 
-        $scope.addOrder = function(customerID){
+        $scope.addOrder = function(){
 
-            $scope.order.customerId = customerID;
+            $scope.order.customerId = document.querySelector("div.form_customer_edit input[name=customerId]").value;
 
             customerOrder.addOrderData($scope.order);
 

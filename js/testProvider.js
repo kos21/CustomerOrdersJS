@@ -2,7 +2,7 @@
  * Created by Kostiantyn on 9/9/2015.
  */
 var testProvider = {
-    statusDebug: true,
+    statusDebug: false,
     list_customers: [
         {
             id: 1,
