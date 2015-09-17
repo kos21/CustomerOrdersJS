@@ -1,5 +1,5 @@
 <ul class="ul_list">
     <li ng-repeat="customer in list_customers">
-        <a href="#" ng-click="showEditCustomer(customer.customerId)">{{ customer.customerId }} {{customer.name }}</a>
+        <a href="#" ng-click="showEditCustomer(customer.customerId)">{{ customer.customerId }} {{customer.name }}</a><button ng-click="deleteCustomerAction(customer.customerId)">Delete</button>
     </li>
 </ul>

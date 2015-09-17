@@ -8,7 +8,8 @@ var configApp = {
         edit_customer: "/app_dev.php/edit/customer/",
         list_customers: "/app_dev.php/get/list/customers/",
         list_orders: "/app_dev.php/get/list/orders/",
-        get_customer_data: "/app_dev.php/get/info/customer/update/"
+        get_customer_data: "/app_dev.php/get/info/customer/update/",
+        delete_customer: "/app_dev.php/delete/customer/"
     },
    templates: {
        add_customer: "customerOrder/customersOrders/views/formAddCustomer.html",

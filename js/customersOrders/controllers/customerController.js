@@ -1,10 +1,10 @@
 /**
  * Created by Kostiantyn on 9/9/2015.
  */
-define(["../module"], function(customersOrders){
+define(["../module"], function (customersOrders) {
     'use strict';
 
-    customersOrders.controller("customerController", ["$scope", "customerOrder", function($scope, customerOrder){
+    customersOrders.controller("customerController", ["$scope", "customerOrder", function ($scope, customerOrder) {
 
         $scope.showForm = true;
         $scope.showEditCustomerForm = true;
@@ -14,20 +14,20 @@ define(["../module"], function(customersOrders){
         /**
          * Show create customer form
          */
-        $scope.showCreateCustomer = function(){
+        $scope.showCreateCustomer = function () {
             $scope.showForm = true;
         };
 
         /**
          * Show edit customer form
          */
-        $scope.showEditCustomer = function(customerId){
-            customerOrder.getlistOrders(customerId, function(resultData){
+        $scope.showEditCustomer = function (customerId) {
+            customerOrder.getlistOrders(customerId, function (resultData) {
                 $scope.list_orders = resultData;
 
-                customerOrder.getCustomerData(customerId, function(customerData){
+                customerOrder.getCustomerData(customerId, function (customerData) {
 
-                    angular.forEach(customerData[0], function(value, key){
+                    angular.forEach(customerData[0], function (value, key) {
 
                         document.querySelector("div.form_customer_edit input[name=" + key + "]").value = value;
                     });
@@ -37,13 +37,13 @@ define(["../module"], function(customersOrders){
             });
         };
 
-        $scope.editCustomerAction = function(){
-            var customerinfo  = {};
+        $scope.editCustomerAction = function () {
+            var customerinfo = {};
 
-            customerinfo.name= document.querySelector("div.form_customer_edit input[name=name").value;
-            customerinfo.phone= document.querySelector("div.form_customer_edit input[name=phone").value;
-            customerinfo.address= document.querySelector("div.form_customer_edit input[name=address").value;
-            customerinfo.customerId= document.querySelector("div.form_customer_edit input[name=customerId").value;
+            customerinfo.name = document.querySelector("div.form_customer_edit input[name=name").value;
+            customerinfo.phone = document.querySelector("div.form_customer_edit input[name=phone").value;
+            customerinfo.address = document.querySelector("div.form_customer_edit input[name=address").value;
+            customerinfo.customerId = document.querySelector("div.form_customer_edit input[name=customerId").value;
 
             customerOrder.editCustomer(customerinfo);
         };
@@ -51,13 +51,13 @@ define(["../module"], function(customersOrders){
         /**
          * Add customer action
          */
-        $scope.addCustomerAction = function(){
+        $scope.addCustomerAction = function () {
             customerOrder.sendDataCustomer($scope.customer);
 
             $scope.customer = {};
         };
 
-        $scope.addOrder = function(){
+        $scope.addOrder = function () {
 
             $scope.order.customerId = document.querySelector("div.form_customer_edit input[name=customerId]").value;
 
@@ -65,5 +65,9 @@ define(["../module"], function(customersOrders){
 
             $scope.order = {};
         };
+        $scope.deleteCustomerAction = function (customerId) {
+
+            customerOrder.deleteCustomer(customerId);
+        }
     }]);
 });
